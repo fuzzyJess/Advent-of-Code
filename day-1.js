@@ -8,7 +8,7 @@ function heaviestElf(elfArray) {
         totals.push(elfTotal);
         elfTotal = 0;
     }
-    return totals[0];
+    return Math.max(...totals);
 }
 
 
