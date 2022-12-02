@@ -18,6 +18,17 @@ function tournamentScore(scores) {
             if (scores[i][0] === "A") {
                 totalScore += 6;
             }
+            if (scores[i][0] === "B") {
+                totalScore += 3;
+            }
+        } else if (scores[i][1] === "X") {
+            totalScore += 1;
+            if (scores[i][0] === "A") {
+                totalScore += 3;
+            }
+            if (scores[i][0] === "C") {
+                totalScore += 6;
+            }
         }
     }
     return totalScore;
