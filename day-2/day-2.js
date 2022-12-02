@@ -29,6 +29,14 @@ function tournamentScore(scores) {
             if (scores[i][0] === "C") {
                 totalScore += 6;
             }
+        } else if (scores[i][1] === "Z") {
+            totalScore += 3;
+            if (scores[i][0] === "B") {
+                totalScore += 6;
+            }
+            if (scores[i][0] === "C") {
+                totalScore += 3;
+            }
         }
     }
     return totalScore;
