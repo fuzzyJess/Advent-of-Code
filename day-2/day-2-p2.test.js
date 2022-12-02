@@ -7,6 +7,10 @@ describe("finalScore", () => {
     })
     test("returns total for two rounds of RPS", () => {
         const rounds = [["A", "Y"], ["B", "X"]]
-        expect(finalScore(rounds)).toBe(6);
+        expect(finalScore(rounds)).toBe(5);
+    })
+    test("returns total for three rounds of RPS", () => {
+        const rounds = [["A", "Y"], ["B", "X"], ["C", "Z"]];
+        expect(finalScore(rounds)).toBe(12);
     })
 })

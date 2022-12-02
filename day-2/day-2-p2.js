@@ -15,21 +15,35 @@ function finalScore(strategyGuide) {
     for (let i = 0; i < strategyGuide.length; i++) {
         if (strategyGuide[i][1] === "X") {
             if (strategyGuide[i][0] === "A") {
-                totalScore += 1;
+                totalScore += 3;
             }
             if (strategyGuide[i][0] === "B") {
-                totalScore += 2;
+                totalScore += 1;
             }
             if (strategyGuide[i][0] === "C") {
-                totalScore += 3;
+                totalScore += 2;
             }
 
         } else if (strategyGuide[i][1] === "Y") {
             if (strategyGuide[i][0] === "A") {
                 totalScore += 4;
             }
+            if (strategyGuide[i][0] === "B") {
+                totalScore += 5;
+            }
+            if (strategyGuide[i][0] === "C") {
+                totalScore += 6;
+            }
         } else if (strategyGuide[i][1] === "Z") {
-
+            if (strategyGuide[i][0] === "A") {
+                totalScore += 8;
+            }
+            if (strategyGuide[i][0] === "B") {
+                totalScore += 9;
+            }
+            if (strategyGuide[i][0] === "C") {
+                totalScore += 7;
+            }
         }
     }
     return totalScore;
