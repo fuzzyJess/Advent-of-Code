@@ -14,6 +14,15 @@ function finalScore(strategyGuide) {
     let totalScore = 0;
     for (let i = 0; i < strategyGuide.length; i++) {
         if (strategyGuide[i][1] === "X") {
+            if (strategyGuide[i][0] === "A") {
+                totalScore += 1;
+            }
+            if (strategyGuide[i][0] === "B") {
+                totalScore += 2;
+            }
+            if (strategyGuide[i][0] === "C") {
+                totalScore += 3;
+            }
 
         } else if (strategyGuide[i][1] === "Y") {
             if (strategyGuide[i][0] === "A") {

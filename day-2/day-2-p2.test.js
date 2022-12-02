@@ -5,4 +5,8 @@ describe("finalScore", () => {
         const round = [["A", "Y"]];
         expect(finalScore(round)).toBe(4);
     })
+    test("returns total for two rounds of RPS", () => {
+        const rounds = [["A", "Y"], ["B", "X"]]
+        expect(finalScore(rounds)).toBe(6);
+    })
 })
