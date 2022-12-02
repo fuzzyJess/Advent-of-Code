@@ -12,6 +12,17 @@ according to your strategy guide?
 
 function finalScore(strategyGuide) {
     let totalScore = 0;
+    for (let i = 0; i < strategyGuide.length; i++) {
+        if (strategyGuide[i][1] === "X") {
+
+        } else if (strategyGuide[i][1] === "Y") {
+            if (strategyGuide[i][0] === "A") {
+                totalScore += 4;
+            }
+        } else if (strategyGuide[i][1] === "Z") {
+
+        }
+    }
     return totalScore;
 }
 

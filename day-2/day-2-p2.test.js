@@ -1,8 +1,8 @@
-const {tournamentScore} = require('./day-2');
+const {finalScore} = require('./day-2-p2');
 
-describe("tournamentScore", () => {
+describe("finalScore", () => {
     test("returns total for one round of RPS", () => {
         const round = [["A", "Y"]];
-        expect(tournamentScore(round)).toBe(4);
+        expect(finalScore(round)).toBe(4);
     })
 })
