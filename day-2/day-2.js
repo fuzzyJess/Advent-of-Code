@@ -1,6 +1,6 @@
 /*
-A for Rock, B for Paper, and C for Scissors
-X for Rock, Y for Paper, and Z for Scissors
+opponent: A for Rock, B for Paper, and C for Scissors
+you: X for Rock, Y for Paper, and Z for Scissors
 
 score 1 for Rock, 2 for Paper, and 3 for Scissors
 +
@@ -11,6 +11,16 @@ according to your strategy guide?
 */
 
 function tournamentScore(scores) {
+    let totalScore = 0;
+    for (let i = 0; i < scores.length; i++) {
+        if (scores[i][1] === "Y") {
+            totalScore += 2;
+            if (scores[i][0] === "A") {
+                totalScore += 6;
+            }
+        }
+    }
+    return totalScore;
     
 }
 
