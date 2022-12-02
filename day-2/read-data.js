@@ -1,4 +1,5 @@
 const fs = require('fs');
+// creates new file called refactored-data.txt to hold move info in separate arrays.
 
 try {
     const data = fs.readFileSync('./data.txt', 'utf-8');
@@ -8,10 +9,8 @@ try {
         arrMoves.push(arr[i].split(" "));
     }
     // arrMoves now contains arrays of the two moves in each RPS fight
-
-
-    let score = 0;
-    const arrTotals = [];
+    const stringyMoves = JSON.stringify(arrMoves);
+    fs.writeFileSync("refactored-data.txt", stringyMoves)
 } catch (err) {
     console.error(err);
 }
