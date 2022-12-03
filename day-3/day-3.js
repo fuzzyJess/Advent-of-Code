@@ -5,8 +5,6 @@
 
 */
 
-
-
 function rucksackSort(itemsArray) {
     const letterArray = []
     for (let i = 0; i < itemsArray.length; i++) {
@@ -26,12 +24,17 @@ function rucksackSort(itemsArray) {
             count--;
         }
         // pushes the duplicate letter into the letterArray
-            
-    console.log(letterArray);
     }
-    return letterArray[0].charCodeAt(0) - 96;
-    // finds letter value and returns it
-
+    result = 0;
+    for (let l = 0; l < letterArray.length; l++) {
+        if (letterArray[l] == letterArray[l].toLowerCase()) {
+            result += letterArray[l].charCodeAt(0) - 96;
+        } else {
+            result += letterArray[l].charCodeAt(0) - 38;
+        }
+        // finds letter values and adds them together
+    }
+    return result;
 }
 
 exporting: module.exports = {rucksackSort};
