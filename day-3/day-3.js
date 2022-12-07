@@ -40,4 +40,50 @@ function rucksackSort(itemsArray) {
     return result;
 }
 
-exporting: module.exports = {rucksackSort};
+function findTheBadges(itemsArray) {
+    let result = 0;
+    let string1 = itemsArray[0];
+    let string2 = itemsArray[1];
+    let string3 = itemsArray[2];
+    // splits array into separate string variables
+
+    let length = 0;
+    if (string1.length >= string2.length && string1.length >= string3.length) {
+        length += string1.length;
+    } else if (string2.length >= string3.length && string2.length >= string1.length) {
+        length += string2.length;
+    } else {
+        length += string3.length;
+    }
+    // sets length of longest string
+
+    const possibleValues = [];
+    const possibleLetters = [];
+    const letterArray = [];
+    for (let i = 0; i < length; i++) {
+        for (let j = 0; j < length; j++) {
+            if (string1[i] === string2[j]) {
+                possibleValues.push(string1[i])
+            }
+        }
+        for (let l = 0; l < possibleValues.length; l++) {
+            if (string3[i] === possibleValues[l]) {
+                possibleLetters.push(string3[i]);
+            }
+        }
+    }
+    letterArray.push(possibleLetters[0]);
+    // adds duplicate letter representing badge to letterArray
+
+    for (let l = 0; l < letterArray.length; l++) {
+        if (letterArray[l] == letterArray[l].toLowerCase()) {
+            result += letterArray[l].charCodeAt(0) - 96;
+        } else {
+            result += letterArray[l].charCodeAt(0) - 38;
+        }
+        // finds letter values and adds them together
+    }
+    return result;
+}
+
+exporting: module.exports = {rucksackSort, findTheBadges};

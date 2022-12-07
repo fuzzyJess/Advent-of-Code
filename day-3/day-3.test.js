@@ -1,4 +1,4 @@
-const {rucksackSort} = require('./day-3');
+const {rucksackSort, findTheBadges} = require('./day-3');
 const { data } = require('./refactored-data');
 const fs = require('fs');
 
@@ -21,5 +21,16 @@ describe("rucksackSort", () => {
     test("returns answer", () => {
         const itemsArray = data;
         expect(rucksackSort(itemsArray)).toBe(7568);
+    })
+})
+
+describe("findTheBadges", () => {
+    test("returns value of one badge when passed 3 strings", () => {
+        const itemsArray = [
+            "vJrwpWtwJgWrhcsFMMfFFhFp",
+            "jqHRNqRjqzjGDLGLrsFMfFZSrLrFZsSL",
+            "PmmdzqPrVvPwwTWBwg"
+        ];
+        expect(findTheBadges(itemsArray)).toBe(18);
     })
 })
