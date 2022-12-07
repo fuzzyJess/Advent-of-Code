@@ -1,8 +1,6 @@
 /* 
-
     Lowercase item types a through z have priorities 1 through 26.
     Uppercase item types A through Z have priorities 27 through 52.
-
 */
 
 function rucksackSort(itemsArray) {
@@ -11,18 +9,23 @@ function rucksackSort(itemsArray) {
         const middle = itemsArray[i].length / 2;
         const sectionOne = itemsArray[i].slice(0, middle);
         const sectionTwo = itemsArray[i].slice(-middle);
-        // slices string into two equal parts
+        // slices each string into two equal parts
         
-        let count = sectionTwo.length - 1;
-        for (let k = 0; k < sectionTwo.length; k++) {
-            for (let j = 0; j < sectionOne.length; j++) {
-                if (sectionOne[j] === sectionTwo[count]) {
-                    letterArray.push(sectionOne[j]);
-                    count = 0;
+        const dupLetters = [];
+        for (let j = 0; j < sectionOne.length; j++) {
+            for (let k = 0; k < sectionTwo.length; k++) {
+                if (sectionOne[j] === sectionTwo[k]) {
+                    if (sectionOne[j] !== undefined) {
+                        if (sectionTwo[k] !== undefined) {
+                        dupLetters.push(sectionOne[j])
+
+                        }
                 }
             }
-            count--;
         }
+    }    
+        letterArray.push(dupLetters[0]);
+
         // pushes the duplicate letter into the letterArray
     }
     result = 0;

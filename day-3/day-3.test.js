@@ -1,4 +1,6 @@
 const {rucksackSort} = require('./day-3');
+const { data } = require('./refactored-data');
+const fs = require('fs');
 
 describe("rucksackSort", () => {
     test("returns value of single duplicate item", () => {
@@ -15,5 +17,9 @@ describe("rucksackSort", () => {
             "CrZsJsPPZsGzwwsLwLmpwMDw"
     ];
         expect(rucksackSort(itemsArray)).toBe(157);
+    })
+    test("returns answer", () => {
+        const itemsArray = data;
+        expect(rucksackSort(itemsArray)).toBe(7568);
     })
 })
