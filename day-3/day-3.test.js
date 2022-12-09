@@ -33,4 +33,19 @@ describe("findTheBadges", () => {
         ];
         expect(findTheBadges(itemsArray)).toBe(18);
     })
+    test.only("returns value of two badges when passed 6 strings", () => {
+        const itemsArray = [
+            "vJrwpWtwJgWrhcsFMMfFFhpF", 
+            "jqHRNqRjqzjGDLGLrsFMfFZSrLrFZsSL", 
+            "PmmdzqPrVvPwwTWBwg", 
+            "wMqvLMZHhHMvwLHjbvcjnnSBnvTQFn", 
+            "ttgJtRGJQctTZtZT", 
+            "CrZsJsPPZsGzwwsLwLmpwMDw"
+        ];
+        expect(findTheBadges(itemsArray)).toBe(70);
+    })
+    test("returns answer", () => {
+        const itemsArray = data;
+        expect(findTheBadges(itemsArray)).toBe(7568);
+    })
 })
