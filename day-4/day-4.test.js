@@ -9,4 +9,15 @@ describe("pairsFullyContained", () => {
         const pair = [["2","9","9","51"], ["38","47","37","48"]]
         expect(pairsFullyContained(pair)).toBe(1);
     })
+    test("correct number when passed multiple pairs that fully contain their partners", () => {
+        const pair = [
+            ["2", "4", "6", "8"],
+            ["2", "3", "4", "5"],
+            ["5", "7", "7", "9"],
+            ["2", "8", "3", "7"],
+            ["6", "6", "4", "6"],
+            ["2", "6", "4", "8"]
+        ]
+        expect(pairsFullyContained(pair)).toBe(2);
+    })
 })
