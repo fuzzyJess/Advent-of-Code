@@ -1,29 +1,31 @@
 function pairsFullyContained(pairArray) {
-    const parsedArray = [];
 
     for (let i = 0; i < pairArray.length; i++) {
-        parsedArray.push(parseInt(pairArray[i][0]));
-        parsedArray.push(parseInt(pairArray[i][1]));
-        parsedArray.push(parseInt(pairArray[i][2]));
-        parsedArray.push(parseInt(pairArray[i][3]));
+        pairArray[i][0] = parseInt(pairArray[i][0]);
+        pairArray[i][1] = parseInt(pairArray[i][1]);
+        pairArray[i][2] = parseInt(pairArray[i][2]);
+        pairArray[i][3] = parseInt(pairArray[i][3]);
     }
     // parsed strings in array passed in
 
     let total = 0;
-    let hasIncreased = false
-    if (parsedArray[0][0] >= parsedArray[0][2] && parsedArray[0][1] <= parsedArray[0][3]) {
-        total += 1;
-        hasIncreased = true;
-        console.log("if one")
-    }
-    if (parsedArray[0][2] >= parsedArray[0][0] && parsedArray[0][3] <= parsedArray[0][1]) {
-        if (hasIncreased === false) {
+
+    for (let j = 0; j < pairArray.length; j++) {
+
+        let hasIncreased = false
+        if (pairArray[j][0] >= pairArray[j][2] && pairArray[j][1] <= pairArray[j][3]) {
             total += 1;
+            hasIncreased = true;
+        }
+        if (pairArray[j][2] >= pairArray[j][0] && pairArray[j][3] <= pairArray[j][1]) {
+            if (hasIncreased === false) {
+                total += 1;
+            }
         }
     }
-
-    // checks if either number pair is fully contained by other pair
     
+    // checks if either number pair is fully contained by other pair
+
     return total;
 }
 
