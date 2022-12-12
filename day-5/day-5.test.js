@@ -1,4 +1,4 @@
-const {topCrates} = require('./day-5')
+const {topCrates, crateMover9001} = require('./day-5')
 const {crates} = require('./crate-data')
 const {moves} = require('./refactored-data')
 
@@ -25,5 +25,12 @@ describe("topCrates", () => {
     })
     test("returns correct answer when passed puzzle input", () => {
         expect(topCrates(crates, moves)).toEqual("TLNGFGMFN")
+    })
+})
+describe("crateMover9001", () => {
+    test("returns letters for top crates when only instructed to move one at a time", () => {
+        const crates = [["Z", "N"], ["M", "C", "D"], ["P"]];
+        const instruction = [["1", "2", "3"]]
+        expect(crateMover9001(crates, instruction)).toEqual("NCD");
     })
 })
