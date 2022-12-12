@@ -29,5 +29,10 @@ function pairsFullyContained(pairArray) {
     return total;
 }
 
+function overlappingPairs(pairArray) {
+let total = 0;
+return total;
+}
 
-exporting: module.exports = {pairsFullyContained}
+
+exporting: module.exports = {pairsFullyContained, overlappingPairs}

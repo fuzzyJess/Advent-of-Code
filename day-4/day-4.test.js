@@ -1,4 +1,4 @@
-const {pairsFullyContained} = require('./day-4');
+const {pairsFullyContained, overlappingPairs} = require('./day-4');
 const { data } = require('./refactored-data');
 const fs = require('fs');
 
@@ -25,5 +25,11 @@ describe("pairsFullyContained", () => {
     test("returns correct answer when passed puzzle input", () => {
         const pairs = data;
         expect(pairsFullyContained(pairs)).toBe(450);
+    })
+})
+describe("overlappingPairs", () => {
+    test("returns 0 when passed one pair that doesn't overlap at all", () => {
+        const pair = [["2", "4", "6", "8"]];
+        expect(overlappingPairs(pair)).toBe(0);
     })
 })
