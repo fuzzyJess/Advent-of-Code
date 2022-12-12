@@ -32,4 +32,8 @@ describe("overlappingPairs", () => {
         const pair = [["2", "4", "6", "8"]];
         expect(overlappingPairs(pair)).toBe(0);
     })
+    test("returns 1 when passed a pair that does overlap with its partner", () => {
+        const pairs = [["2","8","9","51"], ["38","49","37","48"]]
+        expect(overlappingPairs(pairs)).toBe(1);
+    })
 })
