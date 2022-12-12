@@ -1,5 +1,6 @@
 const {topCrates} = require('./day-5')
 const {crates} = require('./crate-data')
+const {moves} = require('./refactored-data')
 
 describe("topCrates", () => {
     test("returns letters for top crates when one move instruction passed to function", () => {
@@ -21,5 +22,8 @@ describe("topCrates", () => {
             ["1", "1", "2"]
         ]
         expect(topCrates(crates, instructions)).toEqual("CMZ")
+    })
+    test("returns correct answer when passed puzzle input", () => {
+        expect(topCrates(crates, moves)).toEqual("TLNGFGMFN")
     })
 })
