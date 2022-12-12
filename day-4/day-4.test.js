@@ -47,4 +47,8 @@ describe("overlappingPairs", () => {
         ]
         expect(overlappingPairs(pairs)).toBe(4);
     })
+    test("returns correct answer when passed puzzle input", () => {
+        const pairs = data;
+        expect(overlappingPairs(pairs)).toBe(837);
+    })
 })

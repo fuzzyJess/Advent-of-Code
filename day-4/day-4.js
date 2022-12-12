@@ -55,7 +55,7 @@ function overlappingPairs(pairArray) {
         }
     // checks if either number pair is fully contained by other pair
 
-        if (pairArray[j][1] >= pairArray[j][2]) {
+        if (pairArray[j][1] >= pairArray[j][2] && pairArray[j][3] >= pairArray[j][0]) {
             if (hasIncreased === false) {
                 total += 1;
                 hasIncreased = true;
