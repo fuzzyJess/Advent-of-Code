@@ -32,5 +32,18 @@ describe("crateMover9001", () => {
         const crates = [["Z", "N"], ["M", "C", "D"], ["P"]];
         const instruction = [["1", "2", "3"]]
         expect(crateMover9001(crates, instruction)).toEqual("NCD");
+        const moreCrates = [["Z", "N"], ["M", "C", "D"], ["P"]];
+        const moreInstructions = [["1", "2", "3"], ["1", "2", "1"]]
+        expect(crateMover9001(moreCrates, moreInstructions)).toEqual("CMD");
+    })
+    test("returns correct letters for crates when passed example instructions", () => {
+        const crates = [["Z", "N"], ["M", "C", "D"], ["P"]];
+        const instructions = [
+            ["1", "2", "1"], 
+            ["3", "1", "3"],
+            ["2", "2", "1"],
+            ["1", "1", "2"]
+        ]
+        expect(crateMover9001(crates, instructions)).toEqual("MCD")
     })
 })

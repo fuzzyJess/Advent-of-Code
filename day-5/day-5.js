@@ -23,14 +23,18 @@ function crateMover9001(crates, instructions) {
     let topCrates = "";
 
     for (let j = 0; j < instructions.length; j++) {
+        let moveTo = instructions[j][2] - 1;
+        let moveFrom = instructions[j][1] - 1;
+        // saves moveFrom & moveTo as temporary variables
+        const tempArray = [];
         for (let k = 0; k < instructions[j][0]; k++) {
             // repeats for number of moves value
-            let moveFrom = instructions[j][1] - 1;
-            let moveTo = instructions[j][2] - 1;
-            // saves moveFrom & moveTo as temporary variables
             let crateToMove = crates[moveFrom].pop();
-            crates[moveTo].push(crateToMove);
+            tempArray.unshift(crateToMove);
         }
+        for (let l = 0; l < tempArray.length; l++) {
+            crates[moveTo].push(tempArray[l]);
+        }    
     }
 
     for (let i = 0; i < crates.length; i++) {
