@@ -10,6 +10,6 @@ const crates = [
     ["F", "C", "Q", "G"]
     ]
 
-// [0][0] = bottom crate, first pile
+// [0][0] = bottom crate, first pile 
 
 exporting: module.exports = {crates}
