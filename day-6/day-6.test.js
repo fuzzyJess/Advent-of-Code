@@ -39,5 +39,8 @@ describe("findStartOfMessage", () => {
         expect(findStartOfMessage(signal4)).toBe(29);
         const signal5 = "zcfzfwzzqfrljwzlrfnpqdbhtmscgvjw";
         expect(findStartOfMessage(signal5)).toBe(26);
-        })
+    })
+    test("returns correct answer when passed puzzle input", () => {
+        expect(findStartOfMessage(datastream)).toBe(2773);
+    })
 })
