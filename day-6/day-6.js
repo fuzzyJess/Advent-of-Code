@@ -1,8 +1,10 @@
 function findStartOfPacket(string) {
-    if (string[0] !== string[1]) {
-        if (string[0] !== string[2] && string[1] !== string[2]) {
-            if (string[0] !== string[3] && string[1] !== string[3] && string[2] !== string[3]) {
-                return 4;
+    for (let i = 0; i < string.length; i++) {
+        if (string[i] !== string[i+1]) {
+            if (string[i] !== string[i+2] && string[i+1] !== string[i+2]) {
+                if (string[i] !== string[i+3] && string[i+1] !== string[i+3] && string[i+2] !== string[i+3]) {
+                    return i + 4;
+                }
             }
         }
     }

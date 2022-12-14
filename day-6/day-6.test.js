@@ -6,4 +6,8 @@ describe("findStartOfPacket", () => {
         const signal = "vwbjplbgvbhsrlpgdmjqwftvncz";
         expect(findStartOfPacket(signal)).toBe(4);
     })
+    test("finds start when pattern begins one into string", () => {
+        const signal = "bvwbjplbgvbhsrlpgdmjqwftvncz";
+        expect(findStartOfPacket(signal)).toBe(5);
+    })
 })
