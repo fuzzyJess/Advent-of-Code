@@ -10,4 +10,17 @@ function findStartOfPacket(string) {
     }
 }
 
-exporting: module.exports = {findStartOfPacket};
+function findStartOfMessage(string) {
+    for (let i = 0; i < string.length; i++) {
+        const tempSet = new Set();
+        for (let j = 0; j < 14; j++) {
+            tempSet.add(string[i + j])
+        }
+        console.log(tempSet);
+        if (tempSet.size === 14) {
+            return i + 14;
+        }
+    }
+}
+
+exporting: module.exports = {findStartOfPacket, findStartOfMessage};

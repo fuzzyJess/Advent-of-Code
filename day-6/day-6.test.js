@@ -1,5 +1,5 @@
 const { datastream } = require("./data")
-const { findStartOfPacket } = require("./day-6")
+const { findStartOfPacket, findStartOfMessage } = require("./day-6")
 
 describe("findStartOfPacket", () => {
     test("finds start when pattern at beginning of string", () => {
@@ -19,6 +19,13 @@ describe("findStartOfPacket", () => {
         expect(findStartOfPacket(signal3)).toBe(11);
     })
     test("returns correct answer when passed puzzle input", () => {
-        expect(findStartOfPacket(datastream)).toBe();
+        expect(findStartOfPacket(datastream)).toBe(1965);
+    })
+})
+
+describe("findStartOfMessage", () => {
+    test("finds start when pattern at beginning of string", () => {
+        const signal = "qmgbljsphdztnvjfqwrcgsmlb";
+        expect(findStartOfMessage(signal)).toBe(14);
     })
 })
