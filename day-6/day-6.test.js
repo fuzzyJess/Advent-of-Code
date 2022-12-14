@@ -10,4 +10,12 @@ describe("findStartOfPacket", () => {
         const signal = "bvwbjplbgvbhsrlpgdmjqwftvncz";
         expect(findStartOfPacket(signal)).toBe(5);
     })
+    test("finds start when pattern begins further into string", () => {
+        const signal = "nppdvjthqldpwncqszvftbrmjlhg";
+        expect(findStartOfPacket(signal)).toBe(6);
+        const signal2 = "nznrnfrfntjfmvfwmzdfjlvtqnbhcprsg";
+        expect(findStartOfPacket(signal2)).toBe(10);
+        const signal3 = "zcfzfwzzqfrljwzlrfnpqdbhtmscgvjw";
+        expect(findStartOfPacket(signal3)).toBe(11);
+    })
 })
