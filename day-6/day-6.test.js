@@ -28,4 +28,16 @@ describe("findStartOfMessage", () => {
         const signal = "qmgbljsphdztnvjfqwrcgsmlb";
         expect(findStartOfMessage(signal)).toBe(14);
     })
+    test("finds start when pattern at different points in string", () => {
+        const signal = "mjqjpqmgbljsphdztnvjfqwrcgsmlb";
+        expect(findStartOfMessage(signal)).toBe(19);
+        const signal2 = "bvwbjplbgvbhsrlpgdmjqwftvncz";
+        expect(findStartOfMessage(signal2)).toBe(23);
+        const signal3 = "nppdvjthqldpwncqszvftbrmjlhg";
+        expect(findStartOfMessage(signal3)).toBe(23);
+        const signal4 = "nznrnfrfntjfmvfwmzdfjlvtqnbhcprsg";
+        expect(findStartOfMessage(signal4)).toBe(29);
+        const signal5 = "zcfzfwzzqfrljwzlrfnpqdbhtmscgvjw";
+        expect(findStartOfMessage(signal5)).toBe(26);
+        })
 })
