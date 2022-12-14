@@ -18,4 +18,7 @@ describe("findStartOfPacket", () => {
         const signal3 = "zcfzfwzzqfrljwzlrfnpqdbhtmscgvjw";
         expect(findStartOfPacket(signal3)).toBe(11);
     })
+    test("returns correct answer when passed puzzle input", () => {
+        expect(findStartOfPacket(datastream)).toBe();
+    })
 })
